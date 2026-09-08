@@ -3,24 +3,23 @@ provider "aws" {
 }
 
 module "ec2_Dev" {
-    source = "git::https://github.com/GukanAtchoudane/AWS-Terraform-Demo.git//Ec2-Module"
-    instancename = "Dev-Server"
-    instancetype = "t2.micro"
+  source       = "git::https://github.com/GukanAtchoudane/AWS-Terraform-Demo.git//Terraform-Module/Ec2-Module?ref=main"
+  instancename = "Dev-Server"
+  instancetype = "t2.micro"
 }
 
 module "ec2_Test" {
-    source = "git::https://github.com/GukanAtchoudane/AWS-Terraform-Demo.git//Ec2-Module"
-    instancename = "Test-Server"
-    instancetype = "t2.micro"
+  source       = "git::https://github.com/GukanAtchoudane/AWS-Terraform-Demo.git//Terraform-Module/Ec2-Module?ref=main"
+  instancename = "Test-Server"
+  instancetype = "t2.micro"
 }
 
-
 module "sg-dev" {
-    source = "git::https://github.com/GukanAtchoudane/AWS-Terraform-Demo.git//SG-Module"
-    port = 8989
+  source = "git::https://github.com/GukanAtchoudane/AWS-Terraform-Demo.git//Terraform-Module/SG-Module?ref=main"
+  port   = 8989
 }
 
 module "sg-test" {
-    source = "git::https://github.com/GukanAtchoudane/AWS-Terraform-Demo.git//SG-Module"
-    port = 7979
+  source = "git::https://github.com/GukanAtchoudane/AWS-Terraform-Demo.git//Terraform-Module/SG-Module?ref=main"
+  port   = 7979
 }

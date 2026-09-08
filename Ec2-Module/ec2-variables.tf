@@ -3,7 +3,7 @@ variable "instancetype" {
 }
 
 variable "myami" {
-  default = "aws-elasticbeanstalk-amzn*"
+  default = "runs-on-dev*"
 }
 
 variable "instancename" {
